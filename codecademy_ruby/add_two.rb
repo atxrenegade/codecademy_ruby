@@ -1,6 +1,6 @@
 =begin
 Harleigh Abel 
-Febuary 3, 2017
+February 3, 2017
 .add_two method 
 =end
 
