@@ -5,7 +5,7 @@ Codecademy
 Ruby - Object Oriented part II
 my_banking.rb
 =end
-
+#added instances of checking, savings, called methods deposit, withdrawal, display balance
 class Account
   attr_reader :name
   attr_reader :balance
@@ -64,5 +64,9 @@ class SavingsAccount < Account
 end  
 
 my_check_account  =  CheckingAccount.new("Harleigh", 145_007)
-
+my_sav_account  =  SavingsAccount.new("Harleigh, 0," )
+my_check_account.deposit(1234, 3_750)
+my_sav_account .withdraw(7777, 500)
+my_sav_account.withdraw(1234, 500)
+my_sav_account.display_balance(1234)
 
