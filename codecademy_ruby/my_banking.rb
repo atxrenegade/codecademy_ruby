@@ -9,7 +9,24 @@ my_banking.rb
 class Account
   attr_reader :name
   attr_reader :balance
+  def initialize(type, name, balance=100)
+      @name = name
+      @balance = balance
+  end
+
+class CheckingAccount < Account
+  attr_reader :name
+  attr_reader :balance
   def initialize(name, balance=100)
+	 @type = "checking"
+      @name = name
+      @balance = balance
+  end
+class SavingsAccount < Account
+  attr_reader :name
+  attr_reader :balance
+  def initialize( name, balance=0)
+	 @type = "savings"
       @name = name
       @balance = balance
   end
@@ -32,18 +49,20 @@ class Account
       if pin_number == pin
 		  @balance > amount?  @balance -= amount : return "Insuffcient funds!"
 		# does insufficient funds fall straight through to the next line?
-          puts "Withdrew #{amount}. New balance: $#{@balance}."
+          puts "Withdrew #{amount}. New balance: $#{@balance} in your #{@type} account."
       else
           puts pin_error
       end
 	def deposit(pin_number, amount)  
 		 if pin_number == pin
           @balance += amount
-          puts "Deposit #{amount}. New balance: $#{@balance}."
+          puts "Deposit #{amount}. New balance: $#{@balance} in your #{@type} account."
       else
           puts pin_error
       end    
   end          
 end  
 
-checking_account = Account.new("Harleigh", 145_007)
+my_check_account  =  CheckingAccount.new("Harleigh", 145_007)
+
+
