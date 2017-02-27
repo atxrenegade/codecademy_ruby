@@ -5,7 +5,7 @@ Codecademy
 Ruby - Object Oriented part II
 my_banking.rb
 =end
-#added instances of checking, savings, called methods deposit, withdrawal, display balance
+
 class Account
   attr_reader :name
   attr_reader :balance
