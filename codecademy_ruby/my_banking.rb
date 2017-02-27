@@ -30,11 +30,19 @@ class Account
   end 
   def withdraw(pin_number, amount)
       if pin_number == pin
-          @balance -= amount
+		  @balance > amount?  @balance -= amount : return "Insuffcient funds!"
+		# does insufficient funds fall straight through to the next line?
           puts "Withdrew #{amount}. New balance: $#{@balance}."
       else
           puts pin_error
-      end      
+      end
+	def deposit(pin_number, amount)  
+		 if pin_number == pin
+          @balance += amount
+          puts "Deposit #{amount}. New balance: $#{@balance}."
+      else
+          puts pin_error
+      end    
   end          
 end  
 
